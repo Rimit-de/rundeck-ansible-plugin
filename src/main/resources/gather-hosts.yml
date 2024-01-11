@@ -7,6 +7,9 @@
   gather_facts: "{{ facts }}"
 
   tasks:
+    - name: Set shell for local commands
+      ansible.builtin.set_fact: cmd
+
     - name: "Ensure tmpdir data directory"
       file:
         path: "{{ tmpdir }}/data"
